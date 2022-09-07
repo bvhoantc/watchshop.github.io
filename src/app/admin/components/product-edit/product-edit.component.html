@@ -1,0 +1,68 @@
+<hr class="pt-5" />
+<a routerLink="/admin/product/list"><u>Back to list</u></a>
+<h3 class="mt-3">Edit Product</h3>
+<div class="container">
+  <form action="" method="post" [formGroup]="productForm" (ngSubmit)="editProduct()">
+    <div class="form-group">
+      <label for="">Name</label>
+      <input type="text" name="" id="" class="form-control" formControlName="name">
+    </div>
+    <div class="form-group">
+      <label for="">Price</label>
+      <input type="text" name="" id="" class="form-control" formControlName="price" />
+    </div>
+    <div class="form-group">
+      <label for="">Image Link</label>
+      <input type="text" name="" id="" class="form-control" formControlName="imagelink" />
+    </div>
+    <div class="form-group">
+      <label for="">Status</label><br>
+      <select for="" formControlName="status" class="form-control">
+        <option value="true" >Active</option>
+        <option value="false" >Deactive</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="">Describe</label>
+      <textarea name="" id="" rows="3" class="form-control" formControlName="describe"></textarea>
+    </div>
+    <div class="form-group">
+      <label for="">Gender</label>
+      <input type="text" name="" id="" class="form-control" formControlName="gender" />
+    </div>
+    <div class="form-group">
+      <label for="">Type</label>
+      <input type="text" name="" id="" class="form-control"formControlName="type"  />
+    </div>
+    <div class="form-group">
+      <label for="">Brand</label>
+      <input type="text" name="" id="" class="form-control" formControlName="brand" />
+    </div>
+    <div class="form-group">
+      <label for="">Shell Meterial</label>
+      <input type="text" name="" id="" class="form-control" formControlName="shellmeterial" />
+    </div>
+    <div class="form-group">
+      <label for="">Wire Material</label>
+      <input type="text" name="" id="" class="form-control" formControlName="wirematerial" />
+    </div>
+    <div class="form-group">
+      <button
+        type="submit"
+        class="btn btn-primary"
+        style="width: 200px"
+      >
+        Edit
+      </button>
+      <button
+        type="button"
+        class="btn btn-danger ml-3"
+        style="width: 200px"
+        (click)="onReset(productForm)"
+      >
+        Reset
+      </button>
+    </div>
+  </form>
+</div>
+

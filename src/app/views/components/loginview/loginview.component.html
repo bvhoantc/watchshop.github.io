@@ -1,0 +1,27 @@
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-sm-6">
+            <form action="" method="post">
+                <h4>Đăng Nhập</h4>
+                <div class="alert alert-danger" *ngIf="error == -1">
+                    <strong>Note!</strong> <a>Username or password is wrong</a>.
+                  </div>
+                <div class="form-group">
+                  <label for="">UserName</label>
+                  <input type="text" name="" id="" class="form-control" #username >
+                </div>
+                <div class="form-group">
+                    <label for="">Password</label>
+                    <input type="text" name="" id="" class="form-control" #password >
+                </div>
+                <div class="form-group">
+                    <a routerLink="/register">Register?</a>
+                </div>
+                <div class="form-group">
+                    <button type="button" class="btn btn-primary" (click)="onLogin(username.value, password.value)">Login</button>
+                  </div>
+            </form>
+        </div>
+    </div>
+</div>
+

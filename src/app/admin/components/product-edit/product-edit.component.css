@@ -1,0 +1,14 @@
+.tableProduct tr,td, th,input{
+    padding: 10px;
+}
+.tableProduct{
+    /*   */
+    width: 700px;
+    text-align: left;
+
+    
+}
+.tableProduct input{
+    width: 400px;
+    border-radius: 5px;
+}

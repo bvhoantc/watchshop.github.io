@@ -1,0 +1,26 @@
+
+<!--Product-->
+<div class="container-fluid mt-4">
+    <hr width="50%" >
+    <h2 class="text-center">Sản phẩm liên quan</h2>
+    <div class="row">
+        <div class="col-sm-12">
+            <owl-carousel-o [options]="customOptions">
+                <ng-template carouselSlide *ngFor="let item of product" >
+                    <div class="card text-left mr-2 procard">
+                      <div class="card-body">
+                        <div class="slide">
+                            <a href="/product/{{ item.id}}" ><img src="{{ item.imagelink}}" alt=""></a>
+                        </div>
+                      </div>
+                      <div class="card-footer">
+                        <h4>{{ item.name }}</h4>
+                        <p> <i>{{ item.price | currency:'VND' }}</i> </p>
+                        <button type="button" class="btn btn-dark">Add to cart</button>
+                      </div>
+                    </div>
+                </ng-template>
+            </owl-carousel-o>
+        </div>
+    </div>
+  </div>

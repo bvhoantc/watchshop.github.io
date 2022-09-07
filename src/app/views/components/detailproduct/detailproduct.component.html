@@ -1,0 +1,88 @@
+<app-header></app-header>
+<hr />
+<div class="container">
+  <div class="row">
+    <div class="col-sm-1">
+      <p (click)="backtolist()" class="text-primary"><u>Home</u></p>
+    </div>
+    <div class="col-sm-3 text-left">
+      <p>><u>Chi tiết sản phẩm</u></p>
+    </div>
+    <!-- <div class="col-sm-8 text-left">
+      <p>> {{ product[0].name }}</p>
+    </div> -->
+  </div>
+</div>
+<ng-container *ngIf="product; else noproduct">
+  <div class="container-fluid mt-3">
+    <div class="row">
+      <div class="col-md-7">
+        <div class="card text-left" style="border: none">
+          <div class="card-body">
+            <img
+              src="{{ product[0].imagelink }}"
+              alt=""
+              style="width: 500px; height: 450px"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="col md-5 text-left ml-2">
+        <h4>{{ product[0].name }}</h4>
+        <p>{{ product[0].price | currency: "VND" }}</p>
+        <div class="card">
+          <div class="card-header" style="height: 80px">
+            <p>
+              <b>Khuyen mai</b> <br />Giá và khuyến mãi dự kiến áp dụng đến
+              23:53 31/08
+            </p>
+          </div>
+          <div class="card-body">
+            <li>Giảm 40% khi mua kèm (không áp dụng kèm khuyến mãi khác</li>
+            <a href="#">Xem chi tiet</a>
+            <li>
+              Nhập mã TGDD giảm 5% tối đa 400.000đ cho đơn hàng từ 500.000đ trở
+              lên khi thanh toán qua Ví Moca trên ứng dụng Grab
+            </li>
+            <a href="#">Xem chi tiet</a>
+            <li>
+              Nhập mã MWG18 giảm 3% tối đa 100.000đ khi thanh toán quét QRcode
+              qua App của ngân hàng
+            </li>
+            <a href="#">Xem chi tiet</a>
+          </div>
+        </div>
+        <button type="button" class="btn btn-dark mt-3" style="width: 200px">
+          Mua Hàng
+        </button>
+        <button
+          type="button"
+          class="btn btn-dark mt-3 ml-3"
+          style="width: 200px"
+        >
+          Thêm vào giỏ hàng
+        </button>
+      </div>
+    </div>
+  </div>
+</ng-container>
+<ng-template #noproduct>
+  <h4 #noproduct>Product has been deleted</h4>
+</ng-template>
+<hr style="width: 50%" />
+<div class="container">
+  <div class="row">
+    <h4>MÔ TẢ</h4>
+    <div class="col-md-12">
+      <h5>{{ product[0].name }}</h5>
+      <br />
+      <p>- Thương hiệu: {{ product[0].brand }}</p>
+      <p>- Giới tính: {{ product[0].gender }}</p>
+      <p>- Chất liệu vỏ: {{ product[0].shellmeterial }}</p>
+      <p>- Chất liệu dây: {{ product[0].wirematerial }}</p>
+    </div>
+  </div>
+</div>
+
+<app-otherproduct></app-otherproduct>
+<app-footer></app-footer>

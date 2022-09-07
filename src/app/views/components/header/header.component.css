@@ -1,0 +1,27 @@
+
+#btn_search{
+    background-color: black;
+    color: white;
+}
+.navbar-brand img{
+    width: 100px;
+
+}
+#dropdownId1{
+    font-weight: bold;
+}
+#signUpFor li{
+    list-style-type: none;
+    color: white;
+}
+.btn_sign:hover{
+    background-color: white;
+    color: black;
+    font-weight: bold;
+}
+.modal-body input{
+    width: 300px;
+    height: 40px; 
+    border-radius: 5px;
+}
+

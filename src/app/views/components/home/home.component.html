@@ -1,0 +1,110 @@
+<app-header></app-header>
+<div class="carousel slide row my-5" data-ride="carousel" id="myCarousel"  >
+    <!--Indicator-->
+    <ul class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active bg-dark"></li>
+        <li data-target="#myCarousel" data-slide-to="1" class=" bg-dark" ></li>
+        <li data-target="#myCarousel" data-slide-to="2" class=" bg-dark" ></li>
+    </ul>
+    <!--SlideShow-->
+    <div class="carousel-inner">
+            <div class="carousel-item" [ngClass]="key ==0 ? 'active' : '' " *ngFor=" let b of Banner; let key = index">
+              <img src="{{b}}" style="width: 100%;" alt="">
+            </div>
+    </div>
+    <!--left and right control-->
+    <a href="#myCarousel" class="carousel-control-prev" data-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    </a>
+    <a href="#myCarousel" class="carousel-control-next" data-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </a>
+</div>
+
+<!--Example-->
+<div class="container-fluid">
+
+    <div class="row mt-4 mb-4 mx-3">
+      <div class="col-md-3">
+          <div class="card text-left">
+            <img class="card-img-top" src="/assets/images/content/product/Onlyou.jpg" alt="">
+          </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card text-left">
+          <img class="card-img-top" src="/assets/images/content/product/Starking1.jpg" alt="">
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card text-left">
+          <img class="card-img-top" src="/assets/images/content/product/Qings.jpg" alt="">
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card text-left">
+          <img class="card-img-top" src="/assets/images/content/product/Starkin2.jpg" alt="">
+        </div>
+      </div>
+    </div>
+    </div>
+
+    <!--Brand-->
+<div class="container-fluid">
+    <div class="row mt-4 mb-4 mx-3">
+      <div class="col-md-2 brand_card">
+        <img class="card-img-top" src="/assets/images/brand/JDM.png" alt="">
+      </div>
+      <div class="col-md-2">
+        <img class="card-img-top" src="/assets/images/brand/KC.png" alt="">
+      </div>
+      <div class="col-md-2">
+        <img class="card-img-top" src="/assets/images/brand/MK.png" alt="">
+      </div>
+      <div class="col-md-2">
+        <img class="card-img-top" src="/assets/images/brand/MVMT.png" alt="">
+      </div>
+      <div class="col-md-2">
+        <img class="card-img-top" src="/assets/images/brand/ONLYOU.png" alt="">
+      </div>
+      <div class="col-md-2">
+        <img class="card-img-top" src="/assets/images/brand/PC.png" alt="">
+      </div>
+      <div class="col-md-2">
+        <img class="card-img-top" src="/assets/images/brand/QI.png" alt="">
+      </div>
+      <div class="col-md-2">
+        <img class="card-img-top" src="/assets/images/brand/STARK.png" alt="">
+      </div>
+      <div class="col-md-2">
+        <img class="card-img-top" src="/assets/images/brand/SUN.png" alt="">
+      </div>
+    </div>
+  </div>
+
+  <!--Product-->
+  <div class="container-fluid">
+    <hr width="50%" >
+    <h2 class="text-center">Sản phẩm mới</h2>
+    <div class="row">
+        <div class="col-sm-12">
+            <owl-carousel-o [options]="customOptions">
+                <ng-template carouselSlide *ngFor="let item of product" >
+                    <div class="card text-left mr-2 procard">
+                      <!-- [routerLink]="['/product', item.id]" -->
+                      <div class="card-body" >
+                        <div class="slide">
+                            <a href="/product/{{ item.id}}"><img src="{{ item.imagelink}}" alt=""></a>
+                        </div>
+                      </div>
+                      <div class="card-footer">
+                        <h4>{{ item.name }}</h4>
+                        <p> <i>{{ item.price | currency:'VND' }}</i> </p>
+                        <button type="button" class="btn btn-dark">Add to cart</button>
+                      </div>
+                    </div>
+                </ng-template>
+            </owl-carousel-o>
+        </div>
+    </div>
+  </div>
+  <app-footer></app-footer>
